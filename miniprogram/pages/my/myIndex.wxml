@@ -1,0 +1,29 @@
+<!--miniprogram/pages/my/myIndex.wxml-->
+<view class="myView">
+  <view class="myTopView">
+    <view class="myTopLeftView">
+      <image class="myImage" src="../../images/wode.png"></image>
+
+    </view>
+    <view class="myTopRightView">
+        <view>name is 8 chart </view>
+    </view>
+  </view>
+  <view class="lineView"></view>
+  <scroll-view scroll-y="true" >
+    <view class = "cellView" bindtap="myAddress">
+      <view class="cellTextView">我的地址</view>
+      <view class="cellSpaceView"> </view>
+      <image src="../../images/arrow-right.png"></image>
+    </view>
+    <view class="cellLineView"></view>
+
+    <view class = "cellView">
+      <view class="cellTextView">我的订单</view>
+      <view class="cellSpaceView"> </view>
+      <image src="../../images/arrow-right.png"></image>
+    </view>
+    <view class="cellLineView"></view>
+
+  </scroll-view>
+</view>

@@ -1,0 +1,57 @@
+{
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/shopList/shopIndex",
+        "text": "商品",
+        "iconPath": "images/dianpu.png",
+        "selectedIconPath": "images/select_dianpu.png"
+      },
+      {
+        "pagePath": "pages/userConsole/userConsole",
+        "text": " 购物车",
+        "iconPath": "images/goumai.png",
+        "selectedIconPath": "images/select_goumai.png"
+      },
+      {
+        "pagePath": "pages/my/myIndex",
+        "text": "我的",
+        "iconPath": "images/wode.png",
+        "selectedIconPath": "images/select_wode.png"
+      }
+    ]
+  },
+  "pages": [
+    "pages/shopList/shopIndex",
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room",
+    "pages/my/myIndex",
+    "pages/shoppingCart"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

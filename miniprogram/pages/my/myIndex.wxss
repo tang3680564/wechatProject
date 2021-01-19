@@ -1,0 +1,76 @@
+/* miniprogram/pages/my/myIndex.wxss */
+
+.myView {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+}
+
+.myTopView {
+  width: 100%;
+  height: 30%;
+  display: flex;
+}
+
+.lineView {
+  width: 100vw;
+  height: 4rpx;
+  background: #efefef;
+}
+
+.myTopLeftView {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.myImage {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  border-width: 10rpx;
+  border-color: gray;
+  margin-left: 64rpx;
+}
+
+.myTopRightView {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 60rpx;
+}
+
+.cellView {
+  width: 100vw;
+  height: 100rpx;
+  margin-top: 50rpx;
+  display: flex;
+  align-items: center;
+}
+
+.cellTextView {
+  display: flex;
+  width: 300rpx;
+  height: 100%;
+  font-size: 40rpx;
+  align-items: center;
+  margin-left: 32rpx;
+}
+.cellSpaceView {
+  flex-grow: 1;
+}
+
+.cellView image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 32rpx;
+}
+
+.cellLineView {
+  height: 2rpx;
+  background: #efefef;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+}

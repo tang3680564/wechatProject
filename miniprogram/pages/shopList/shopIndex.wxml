@@ -1,0 +1,57 @@
+<!--miniprogram/pages/shopList/shopIndex.wxml-->
+<view class="shopMainView">
+<scroll-view scroll-y="true" class="shopScrollView">
+          <view class='shopListViewItem' wx:for="{{array}}">
+            <view class='{{listSelectIndex == index ? "listSelect" : ""}}' bindtap="shopListViewTap" data-current="{{index}}">
+              {{item.message}}
+            </view>
+          </view>
+</scroll-view>
+<scroll-view scroll-y="true" class="shopDetailScrollView">
+        <view class="shopDetailCell">
+          <view class="shopDetailItem" wx:for="{{shopDetail}}">
+            <view class='shopDetailItemView'>
+              <view class="shopDetailImageView">
+                <image class="cellImage" src="../../images/jichi.png" data-current="{{index}}" bindtap="detailSelect">
+                </image>
+              </view>
+              <view class="cellRightView"> 
+                <View class="shoppingTitle">
+                  {{item.shoppingTitle}}
+                </View>
+                <view class="priceView">
+                  <text class="priceText1">¥</text>
+                  <text class="priceText">{{item.price}}</text>
+                </view>
+                
+                <view class="cellRightBttomView">
+                  <view></view>
+                  <image src="../../images/jianhao.png" data-current="{{index}}" bindtap="subNumber"  wx:if="{{item.number > 0}}"></image>
+                  <text  wx:if="{{item.number > 0}}">{{item.number}}</text>
+                  <image src="../../images/jiahao.png" data-current="{{index}}" bindtap="addNumber"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="detaiBttomView">
+
+          </view>
+        </view>
+</scroll-view>
+
+<view class="totalPriceView">  
+  
+<text class="totalPriceView1">¥</text>
+<text class="totalPriceView2">{{totalPrice}}</text>
+<view class="totalPriceView3"> 
+
+</view>
+<view class="totalPriceView4">
+  <image src="../../images/gouwu.png"></image>
+  <text>去结算</text>
+</view>
+
+
+
+</view>
+</view>
