@@ -10,11 +10,41 @@ Page({
   },
 
   addNumber: function (view) {
-
+      var index = view.target.dataset.current;
+      var shopCartJson = this.data.shopCartJson;
+      var cellJson = shopCartJson[index];
+      cellJson.number = cellJson.number + 1;
+      cellJson.shopTotalPrice = Math.round((cellJson.number*cellJson.price)*100)/100;
+      var totalPrice = Math.round((cellJson.price + this.data.totalPrice)*100)/100;
+      this.setData({
+        shopCartJson: shopCartJson,
+        totalPrice: totalPrice
+      });
+      this.saveShoppingJson();
   },
 
   subNumber: function (view) {
-
+    var index = view.target.dataset.current;
+    var shopCartJson = this.data.shopCartJson;
+    var cellJson = shopCartJson[index];
+    cellJson.number = cellJson.number - 1;
+    if (cellJson.number < 0) {
+        cellJson.number = 0;
+    } 
+    cellJson.shopTotalPrice = Math.round((cellJson.number*cellJson.price)*100)/100;
+    var totalPrice = Math.round((this.data.totalPrice - cellJson.price)*100)/100;
+    if (totalPrice < 0) {
+      totalPrice = 0;
+    }
+    //数量为0，清除购物车中的对象
+    if (cellJson.number == 0) {
+      delete shopCartJson[index];
+    }
+    this.setData({
+      shopCartJson: shopCartJson,
+      totalPrice: totalPrice
+    })
+    this.saveShoppingJson();
   },
 
   saveShoppingJson: function() {

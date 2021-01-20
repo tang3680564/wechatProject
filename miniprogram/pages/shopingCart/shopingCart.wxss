@@ -91,58 +91,58 @@
 }
 
 .totalPriceView {
-  background: rgba(65, 65, 57, 1);
-  width: 100vw;
-  height: 90rpx;
-  position: fixed;
-  bottom: 0rpx;
-  left: 0rpx;
-  border-radius: 5rpx;
+ background: rgba(65, 65, 57, 1);
+ width: 100vw;
+ height: 90rpx;
+ position: fixed;
+ bottom: 0rpx;
+ left: 0rpx;
+ border-radius: 5rpx;
+ display: flex;
+ justify-content: left;
+ align-items: center;
+}
+
+
+
+.totalPriceView1 {
+    font-size: 30rpx;
+    color: white;
+    margin: 10rpx;
+    margin-right: 0rpx;
+    margin-left: 32rpx;
+}
+
+.totalPriceView2 {
+  font-size: 60rpx;
+  color: white;
+  margin: 10rpx;
+}
+
+.totalPriceView3 {
+  flex-grow: 1;
+}
+
+.totalPriceView4 {
   display: flex;
-  justify-content: left;
+  height: 100%;
+  justify-content: center;
   align-items: center;
- }
- 
- 
- 
- .totalPriceView1 {
-     font-size: 30rpx;
-     color: white;
-     margin: 10rpx;
-     margin-right: 0rpx;
-     margin-left: 32rpx;
- }
- 
- .totalPriceView2 {
-   font-size: 60rpx;
-   color: white;
-   margin: 10rpx;
- }
- 
- .totalPriceView3 {
-   flex-grow: 1;
- }
- 
- .totalPriceView4 {
-   display: flex;
-   height: 100%;
-   justify-content: center;
-   align-items: center;
-   margin: 0rpx;
-   background: rgb(252, 211, 29, 1);
- }
- 
- .totalPriceView4 image {
-   width: 60rpx;
-   height: 60rpx;
-   margin-left: 20rpx;
- }
- 
- .totalPriceView4 text {
-   height: 60rpx;
-   margin-right: 40rpx;
-   margin-left: 20rpx;
-   margin-top: 15rpx;
-   font-size: 35rpx;
-   color: rgba(0, 0, 0, 0.651);
- }
+  margin: 0rpx;
+  background: rgb(252, 211, 29, 1);
+}
+
+.totalPriceView4 image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+}
+
+.totalPriceView4 text {
+  height: 60rpx;
+  margin-right: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 15rpx;
+  font-size: 35rpx;
+  color: rgba(0, 0, 0, 0.651);
+}

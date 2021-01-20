@@ -17,9 +17,9 @@
       <view class="rightCellBttomView">
           <view class="cellTotalSpaceView"></view>
            <view class="rightCellBttomRightView">
-             <image src="../../images/jianhao.png" bindtap="subNumber"></image>
+             <image src="../../images/jianhao.png" bindtap="subNumber"  data-current="{{item.id}}"></image>
              <view class="cellNumberView">{{item.number}}</view>
-             <image src="../../images/jiahao.png" bindtap="addNumber"></image>
+             <image src="../../images/jiahao.png" bindtap="addNumber" data-current="{{item.id}}" ></image>
            </view>
       </view>
     </view>
