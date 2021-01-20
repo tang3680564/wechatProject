@@ -103,18 +103,21 @@ Page({
     var shopingId = shop.id;
     var objectJson = this.data.shopingJson[shopingId];
     if (objectJson == undefined || objectJson == null) {
+      shop.shopTotalPrice = Math.round((number*shop.price)*100)/100;
       this.data.shopingJson[shopingId] = shop;
     } else {
       objectJson.number = number;
       this.data.shopingJson[shopingId] = objectJson;
-      this.saveShoppingJson();
+      //单个商品总价格计算
+      objectJson.shopTotalPrice = Math.round((number*shop.price)*100)/100;
     }
     //总价格计算
-    totalPriceStr = Math.round((totalPriceStr+shop.price)*100)/100;
+    totalPriceStr = Math.round((totalPriceStr+shop.price)*100)/100; 
     this.setData({
       [str]: number,
       totalPrice: totalPriceStr
     })
+    this.saveShoppingJson();
   },
 
   subNumber: function (view) {
@@ -123,6 +126,9 @@ Page({
     var shop =  this.data.shopDetail[index];
     //计算当前商品数量
     var number = shop.number - 1;
+    if (number < 0) {
+      number = 0;
+    }
     var str = "shopDetail[" + index + "].number"
     //购物车对象存储
     var shopingId = shop.id;
@@ -133,15 +139,12 @@ Page({
     } else {
       objectJson.number = number;
       this.data.shopingJson[shopingId] = objectJson;
-      this.saveShoppingJson();
+      objectJson.shopTotalPrice = Math.round((number*shop.price)*100)/100;
     }
     //获取当前总价格
     var totalPriceStr = this.data.totalPrice;
     //计算总价格
     totalPriceStr = Math.round((totalPriceStr-shop.price)*100)/100;
-    if (number < 0) {
-      number = 0;
-    }
     if (totalPriceStr < 0) {
       totalPriceStr = 0;
     }
@@ -149,11 +152,13 @@ Page({
       [str]: number,
       totalPrice: totalPriceStr
     })
+    this.saveShoppingJson();
   },
 
   saveShoppingJson: function() {
     try {
       wx.setStorageSync('shoppingJson', JSON.stringify(this.data.shopingJson));
+      wx.setStorageSync('totalPrice', this.data.totalPrice);
     } catch (e) { 
       console.log(e);
     }
@@ -177,7 +182,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    wx.getStorage({
+      key: 'shoppingJson',
+      success (res) {
+        console.log(res.data);
+        var json = JSON.parse(res.data);
+        that.setData({
+          shopingJson: json,
+        });
+      }
+    });
+    wx.getStorage({
+      key: 'totalPrice',
+      success (res) {
+        var price = res.data;
+        that.setData({
+          totalPrice: price,
+        });
+      }
+    })
   },
 
   /**

@@ -11,7 +11,7 @@
         "selectedIconPath": "images/select_dianpu.png"
       },
       {
-        "pagePath": "pages/userConsole/userConsole",
+        "pagePath": "pages/shopingCart/shopingCart",
         "text": " 购物车",
         "iconPath": "images/goumai.png",
         "selectedIconPath": "images/select_goumai.png"
@@ -40,7 +40,7 @@
     "pages/im/im",
     "pages/im/room/room",
     "pages/my/myIndex",
-    "pages/shoppingCart"
+    "pages/shopingCart/shopingCart"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

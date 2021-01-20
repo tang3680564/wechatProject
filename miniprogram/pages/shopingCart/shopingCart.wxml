@@ -1,0 +1,45 @@
+<!--miniprogram/pages/shopingCart/shopingCart.wxml-->
+<view class="mainView">
+<scroll-view scroll-y="true">
+  <view wx:for="{{shopCartJson}}">
+  <view class="cellView">
+    <view class="leftCellView">
+        <image src="../../images/jichi.png" class="cellImage">
+        </image>
+    </view>
+    <view class="rightCellView">
+      <view class="cellShopingTitle">{{item.shoppingTitle}}</view>
+      <view class="cellTotalPriceView">
+        <view class="cellTotalSpaceView"></view>
+          <view class="cellChartView">¥</view>
+          <view class="cellPriceView">{{item.shopTotalPrice}}</view>
+      </view>
+      <view class="rightCellBttomView">
+          <view class="cellTotalSpaceView"></view>
+           <view class="rightCellBttomRightView">
+             <image src="../../images/jianhao.png" bindtap="subNumber"></image>
+             <view class="cellNumberView">{{item.number}}</view>
+             <image src="../../images/jiahao.png" bindtap="addNumber"></image>
+           </view>
+      </view>
+    </view>
+  </view>
+  <view class="lineView"> </view>
+  </view>
+</scroll-view>
+
+<view class="totalPriceView">  
+  
+<text class="totalPriceView1">¥</text>
+<text class="totalPriceView2">{{totalPrice}}</text>
+<view class="totalPriceView3"> 
+
+</view>
+<view class="totalPriceView4">
+  <image src="../../images/gouwu.png"></image>
+  <text>确认预定</text>
+</view>
+
+</view>
+
+</view>
