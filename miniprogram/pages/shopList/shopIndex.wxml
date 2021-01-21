@@ -39,7 +39,7 @@
         </view>
 </scroll-view>
 
-<view class="totalPriceView">  
+<view class="totalPriceView" bindtap="navShopingCart">  
   
 <text class="totalPriceView1">¥</text>
 <text class="totalPriceView2">{{totalPrice}}</text>

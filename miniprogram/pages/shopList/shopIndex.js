@@ -168,6 +168,13 @@ Page({
     }
   },
 
+  //跳转去购物车
+  navShopingCart: function() {
+    wx.switchTab({
+      url: '../shopingCart/shopingCart'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -192,8 +199,26 @@ Page({
       success (res) {
         console.log(res.data);
         var json = JSON.parse(res.data);
+        var shopDetaiArray = [];
+        //同步购物车对象的数量
+        for (var i in that.data.shopDetail) {
+          //获取当前页面的商品详情对象
+          var shopDetail = that.data.shopDetail[i];
+          var shopId = shopDetail.id;
+          //获取购物车商品详情的对象
+          var shopDeatailCell = json[shopId];
+          if (shopDeatailCell != null && shopDeatailCell != undefined) {
+            shopDetail =  shopDeatailCell;
+          } else {
+            shopDetail.number = 0;
+            shopDetail.totalPrice = 0;
+          }
+          shopDetaiArray.push(shopDetail);
+        }
+        console.log(shopDetaiArray);
         that.setData({
           shopingJson: json,
+          shopDetail: shopDetaiArray
         });
       }
     });

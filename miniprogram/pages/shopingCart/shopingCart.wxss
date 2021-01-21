@@ -6,6 +6,10 @@
   background: white;
 }
 
+.shopScrollView {
+  background: white;
+  height: 100vh;
+}
 .cellView {
   margin-top: 32rpx;
   width: 100vw;
@@ -145,4 +149,11 @@
   margin-top: 15rpx;
   font-size: 35rpx;
   color: rgba(0, 0, 0, 0.651);
+}
+
+
+.bttomView {
+  width: 100vw;
+  height: 90rpx;
+  background: white;
 }

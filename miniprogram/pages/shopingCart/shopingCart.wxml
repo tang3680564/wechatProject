@@ -1,6 +1,6 @@
 <!--miniprogram/pages/shopingCart/shopingCart.wxml-->
 <view class="mainView">
-<scroll-view scroll-y="true">
+<scroll-view scroll-y="true" class="shopScrollView">
   <view wx:for="{{shopCartJson}}">
   <view class="cellView">
     <view class="leftCellView">
@@ -26,6 +26,8 @@
   </view>
   <view class="lineView"> </view>
   </view>
+  <view class="bttomView">
+</view> 
 </scroll-view>
 
 <view class="totalPriceView">  
