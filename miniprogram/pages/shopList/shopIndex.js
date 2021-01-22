@@ -119,10 +119,10 @@ Page({
     
   },
 
+  ///商品类型
   getShopType: function() {
     const db = wx.cloud.database();
     var that = this;
-    ///商品类型
     db.collection('shop_list_type')
     .get({
       success: function(res) {
@@ -137,30 +137,63 @@ Page({
     })
   },
 
+   ///商品详情
   getShopDetail: function(str) {
     const db = wx.cloud.database();
     var that = this;
     console.log(str);
-    ///商品详情
     db.collection('shop_list_detail')
     .where({
     shop_type: str
     }).get({
       success: function(res) {
       // 输出 [{ "title": "The Catcher in the Rye", ... }]
-      console.log(res)
       that.setData({
         shopDetail: res.data
       });
+      that.syncShopDetail();
      }
     })
+  },
+
+  //同步商品和购物车数据
+  syncShopDetail: function(){
+    var that = this;
+    wx.getStorage({
+      key: 'shoppingJson',
+      success (res) {
+        console.log(res.data);
+        var json = JSON.parse(res.data);
+        var shopDetaiArray = [];
+        //同步购物车对象的数量
+        for (var i in that.data.shopDetail) {
+          //获取当前页面的商品详情对象
+          var shopDetail = that.data.shopDetail[i];
+          var shopId = shopDetail._id;
+          //获取购物车商品详情的对象
+          var shopDeatailCell = json[shopId];
+          if (shopDeatailCell != null && shopDeatailCell != undefined) {
+            shopDetail =  shopDeatailCell;
+          } else {
+            shopDetail.number = 0;
+            shopDetail.totalPrice = 0;
+          }
+          shopDetaiArray.push(shopDetail);
+        }
+        console.log(shopDetaiArray);
+        that.setData({
+          shopingJson: json,
+          shopDetail: shopDetaiArray
+        });
+      }
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
