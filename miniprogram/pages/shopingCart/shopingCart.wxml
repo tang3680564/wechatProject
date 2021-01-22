@@ -8,7 +8,7 @@
         </image>
     </view>
     <view class="rightCellView">
-      <view class="cellShopingTitle">{{item.shoppingTitle}}</view>
+      <view class="cellShopingTitle">{{item.shop_name}}</view>
       <view class="cellTotalPriceView">
         <view class="cellTotalSpaceView"></view>
           <view class="cellChartView">¥</view>
@@ -17,9 +17,9 @@
       <view class="rightCellBttomView">
           <view class="cellTotalSpaceView"></view>
            <view class="rightCellBttomRightView">
-             <image src="../../images/jianhao.png" bindtap="subNumber"  data-current="{{item.id}}"></image>
+             <image src="../../images/jianhao.png" bindtap="subNumber"  data-current="{{item._id}}"></image>
              <view class="cellNumberView">{{item.number}}</view>
-             <image src="../../images/jiahao.png" bindtap="addNumber" data-current="{{item.id}}" ></image>
+             <image src="../../images/jiahao.png" bindtap="addNumber" data-current="{{item._id}}" ></image>
            </view>
       </view>
     </view>
@@ -30,7 +30,7 @@
 </view> 
 </scroll-view>
 
-<view class="totalPriceView">  
+<view class="totalPriceView" bindtap="chooseAddress">  
   
 <text class="totalPriceView1">¥</text>
 <text class="totalPriceView2">{{totalPrice}}</text>
@@ -44,4 +44,11 @@
 
 </view>
 
+  <mp-dialog title="确认预定信息" show="{{comfrimAlertFlag}}"   bindbuttontap="comfrimTap" buttons="{{buttons}}">
+        <view>收货地址：{{userSelectAddress}}</view>
+        <view>总价：¥{{totalPrice}}</view>
+    </mp-dialog>
+    <mp-dialog title="提示" show="{{alertInfoFlag}}" bindbuttontap="alertInfoTap" buttons="{{oneButton}}">
+        <view>请先添加预定商品</view>
+    </mp-dialog>
 </view>

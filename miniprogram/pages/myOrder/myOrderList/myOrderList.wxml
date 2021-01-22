@@ -1,0 +1,21 @@
+<!--miniprogram/pages/myOrder/myOrderList/myOrderList.wxml-->
+<view class="mainView">
+<scroll-view scroll-y="true" class="scrollView">
+  <view class="cellView" wx:for="{{orderListArray}}">
+    <view class="cellLeftView"> 
+      <image src="../../../images/jichi.png" class="cellImage"></image>
+    </view>
+      <view class="cellRightView">
+          <view class="cellDateView">
+            <view>预定下单时间：</view>
+            <view>{{item.orderDate}}</view>
+          </view>
+          <view class="cellTotalView">
+            <view >总价：¥{{item.orderPrice}}</view>
+
+          </view>
+      </view>
+  </view>
+</scroll-view>
+
+</view>

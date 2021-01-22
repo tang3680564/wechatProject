@@ -1,9 +1,9 @@
 <!--miniprogram/pages/shopList/shopIndex.wxml-->
 <view class="shopMainView">
 <scroll-view scroll-y="true" class="shopScrollView">
-          <view class='shopListViewItem' wx:for="{{array}}">
+          <view class='shopListViewItem' wx:for="{{typeArray}}">
             <view class='{{listSelectIndex == index ? "listSelect" : ""}}' bindtap="shopListViewTap" data-current="{{index}}">
-              {{item.message}}
+              {{item.type}}
             </view>
           </view>
 </scroll-view>
@@ -17,11 +17,11 @@
               </view>
               <view class="cellRightView"> 
                 <View class="shoppingTitle">
-                  {{item.shoppingTitle}}
+                  {{item.shop_name}}
                 </View>
                 <view class="priceView">
                   <text class="priceText1">¥</text>
-                  <text class="priceText">{{item.price}}</text>
+                  <text class="priceText">{{item.shop_price}}</text>
                 </view>
                 
                 <view class="cellRightBttomView">

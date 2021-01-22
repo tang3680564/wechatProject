@@ -8,13 +8,13 @@
 
 .myTopView {
   width: 100%;
-  height: 30%;
+  height: 27%;
   display: flex;
 }
 
 .lineView {
   width: 100vw;
-  height: 4rpx;
+  height: 3rpx;
   background: #efefef;
 }
 

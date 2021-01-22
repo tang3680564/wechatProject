@@ -1,0 +1,56 @@
+/* miniprogram/pages/myOrder/myOrderList/myOrderList.wxss */
+.mainView {
+  width: 100vw;
+  height: 100vh;
+ 
+}
+
+.scrollView {
+  width: 100vw;
+  height: 100vh;
+  
+}
+
+.cellView {
+  background: white;
+  height: 200rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  margin-top: 16rpx;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  
+}
+.cellLeftView {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cellImage {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+}
+
+.cellRightView {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  font-size: 28rpx;
+}
+
+.cellDateView {
+  display: flex;
+  flex-direction: row;
+  margin-top: 24rpx;
+}
+
+.cellTotalView {
+  margin-top: 16rpx;
+}

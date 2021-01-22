@@ -6,7 +6,12 @@ Page({
    */
   data: {
       shopCartJson: {},
-      totalPrice: 0
+      totalPrice: 0,
+      comfrimAlertFlag:false,
+      buttons: [{text: '取消'}, {text: '确定'}],
+      oneButton: [{text: '确定'}],
+      userSelectAddress: "",
+      alertInfoFlag: false
   },
 
   addNumber: function (view) {
@@ -14,8 +19,8 @@ Page({
       var shopCartJson = this.data.shopCartJson;
       var cellJson = shopCartJson[index];
       cellJson.number = cellJson.number + 1;
-      cellJson.shopTotalPrice = Math.round((cellJson.number*cellJson.price)*100)/100;
-      var totalPrice = Math.round((cellJson.price + this.data.totalPrice)*100)/100;
+      cellJson.shopTotalPrice = Math.round((cellJson.number*cellJson.shop_price)*100)/100;
+      var totalPrice = Math.round((cellJson.shop_price + this.data.totalPrice)*100)/100;
       this.setData({
         shopCartJson: shopCartJson,
         totalPrice: totalPrice
@@ -31,8 +36,8 @@ Page({
     if (cellJson.number < 0) {
         cellJson.number = 0;
     } 
-    cellJson.shopTotalPrice = Math.round((cellJson.number*cellJson.price)*100)/100;
-    var totalPrice = Math.round((this.data.totalPrice - cellJson.price)*100)/100;
+    cellJson.shopTotalPrice = Math.round((cellJson.number*cellJson.shop_price)*100)/100;
+    var totalPrice = Math.round((this.data.totalPrice - cellJson.shop_price)*100)/100;
     if (totalPrice < 0) {
       totalPrice = 0;
     }
@@ -56,6 +61,49 @@ Page({
     }
   },
 
+  alertInfoTap: function() {
+      this.setData({
+          alertInfoFlag: false
+      });
+  },
+
+  chooseAddress: function() {
+    if (this.data.totalPrice <= 0) {
+      this.setData({
+          alertInfoFlag: true
+      })
+      return;
+    }
+    var that = this;
+     wx.chooseAddress({
+      success (res) {
+        console.log(res.userName)
+        console.log(res.postalCode)
+        console.log(res.provinceName)
+        console.log(res.cityName)
+        console.log(res.countyName)
+        console.log(res.detailInfo)
+        console.log(res.nationalCode)
+        console.log(res.telNumber)
+        that.setData({
+          comfrimAlertFlag: true,
+          userSelectAddress: res.detailInfo
+        });
+      }
+    });
+  },
+
+  comfrimTap: function(button) {
+    var index = button.detail.index;
+    ///点击了确定
+    if (index == 1) {
+
+    };
+    this.setData({
+        comfrimAlertFlag: false
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -74,9 +122,9 @@ Page({
     wx.getStorage({
       key: 'totalPrice',
       success (res) {
-        var price = res.data;
+        var shop_price = res.data;
         that.setData({
-          totalPrice: price,
+          totalPrice: shop_price,
         });
       }
     })
@@ -106,9 +154,9 @@ Page({
     wx.getStorage({
       key: 'totalPrice',
       success (res) {
-        var price = res.data;
+        var shop_price = res.data;
         that.setData({
-          totalPrice: price,
+          totalPrice: shop_price,
         });
       }
     })

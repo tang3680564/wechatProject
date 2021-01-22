@@ -1,19 +1,24 @@
-// miniprogram/pages/my/myIndex.js
+// miniprogram/pages/myOrder/myOrderList/myOrderList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    orderListArray: [
+      {
+        orderId : "1",
+        orderDate : "2021-01-10",
+        orderPrice : 1022,
+      },
+      {
+        orderId : "2",
+        orderDate : "2021-02-10",
+        orderPrice : 302,
+      }
+    ]
   },
 
-  navMyOrderList: function (view) {
-    wx.navigateTo({
-      url: '../myOrder/myOrderList/myOrderList',
-    })
-  },
-  
   /**
    * 生命周期函数--监听页面加载
    */
