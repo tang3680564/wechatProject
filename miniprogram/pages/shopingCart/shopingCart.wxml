@@ -51,4 +51,9 @@
     <mp-dialog title="提示" show="{{alertInfoFlag}}" bindbuttontap="alertInfoTap" buttons="{{oneButton}}">
         <view>请先添加预定商品</view>
     </mp-dialog>
+
+    <mp-dialog title="提示" show="{{successOrderFlag}}" bindbuttontap="successOrder" buttons="{{oneButton}}">
+        <view>预下单成功</view>
+    </mp-dialog>
+
 </view>

@@ -79,7 +79,7 @@ Page({
       //如果数量为0，清除购物车中的对象
       if (number == 0 ) {
         delete this.data.shopingJson[shopingId]; 
-      }
+      } 
     }
     //获取当前总价格
     var totalPriceStr = this.data.totalPrice;
@@ -116,7 +116,6 @@ Page({
    */
   onLoad: function (options) {
     this.getShopType();
-    
   },
 
   ///商品类型

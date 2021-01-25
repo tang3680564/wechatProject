@@ -11,7 +11,9 @@ Page({
       buttons: [{text: '取消'}, {text: '确定'}],
       oneButton: [{text: '确定'}],
       userSelectAddress: "",
-      alertInfoFlag: false
+      alertInfoFlag: false,
+      successOrderFlag: false,
+      userInfoSelectJson: {}
   },
 
   addNumber: function (view) {
@@ -87,7 +89,8 @@ Page({
         console.log(res.telNumber)
         that.setData({
           comfrimAlertFlag: true,
-          userSelectAddress: res.detailInfo
+          userSelectAddress: res.detailInfo,
+          userInfoSelectJson: res
         });
       }
     });
@@ -97,11 +100,43 @@ Page({
     var index = button.detail.index;
     ///点击了确定
     if (index == 1) {
-
+        this.saveUserOrder();
     };
     this.setData({
         comfrimAlertFlag: false
     });
+  },
+
+  saveUserOrder: function() {
+    let totalPrice = this.data.totalPrice;
+    let shopCartJson = this.data.shopCartJson;
+    let userInfoJson = this.data.userInfoSelectJson;
+    var that = this;
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'userOrderAdd',
+      // 传给云函数的参数
+      data: {
+        totalPrice: totalPrice,
+        shopCartJson: shopCartJson,
+        userInfoJson: userInfoJson
+      },
+      success: function(res) {
+        
+        console.log(res) // 3
+        that.setData({
+          successOrderFlag: true
+        })
+      },
+      fail: console.error
+    });
+  },
+
+  //下单成功
+  successOrder: function() {
+      this.setData({
+        successOrderFlag: false
+      })
   },
 
   /**
