@@ -19,19 +19,18 @@
 }
 
 .myTopLeftView {
-  width: 25%;
+  width: 27%;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
 .myImage {
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50rpx;
-  border-width: 10rpx;
-  border-color: gray;
-  margin-left: 64rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 30rpx;
+  margin-left: 32rpx;
+  overflow:hidden;
 }
 
 .myTopRightView {
@@ -39,13 +38,13 @@
   height: 100%;
   display: flex;
   align-items: center;
-  font-size: 60rpx;
+  font-size: 50rpx;
 }
 
 .cellView {
   width: 100vw;
   height: 100rpx;
-  margin-top: 50rpx;
+  margin-top: 15rpx;
   display: flex;
   align-items: center;
 }

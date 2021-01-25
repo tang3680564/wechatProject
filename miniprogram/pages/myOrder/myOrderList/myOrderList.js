@@ -5,25 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    orderListArray: [
-      {
-        orderId : "1",
-        orderDate : "2021-01-10",
-        orderPrice : 1022,
-      },
-      {
-        orderId : "2",
-        orderDate : "2021-02-10",
-        orderPrice : 302,
-      }
-    ]
+    orderListArray: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'getUserOrderList',
+      // 传给云函数的参数
+      data: {},
+      success: function(res) {
+        console.log(res);
+        var orderListArray = res.result.data;
+        that.setData({
+          orderListArray: orderListArray
+        })
+      },
+      fail: console.error
+    });
   },
 
   /**

@@ -54,3 +54,7 @@
 .cellTotalView {
   margin-top: 16rpx;
 }
+
+.cellStatusView {
+  margin-top: 16rpx;
+}

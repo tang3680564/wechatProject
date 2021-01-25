@@ -11,8 +11,12 @@
             <view>{{item.orderDate}}</view>
           </view>
           <view class="cellTotalView">
-            <view >总价：¥{{item.orderPrice}}</view>
-
+            <view >总价：¥{{item.totalPrice}}</view>
+          </view>
+          <view class="cellStatusView">
+            <view>
+              状态：预定中
+            </view>
           </view>
       </view>
   </view>

@@ -192,8 +192,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
-  },
+
+  }, 
 
   /**
    * 生命周期函数--监听页面显示
@@ -226,6 +226,22 @@ Page({
           shopingJson: json,
           shopDetail: shopDetaiArray
         });
+      }, fail (error) {
+        that.data.shopingJson = {};
+        var shopDetaiArray = [];
+        for (var i in that.data.shopDetail) {
+          //获取当前页面的商品详情对象
+          var shopDetail = that.data.shopDetail[i];
+          if (shopDetail.number != null && shopDetail.number != undefined) {
+              shopDetail.number = 0
+              shopDetail.totalPriceStr = 0; 
+          }
+          shopDetaiArray.push(shopDetail);
+        }
+          that.setData({
+            totalPrice: 0,
+            shopDetail: shopDetaiArray
+          })
       }
     });
     wx.getStorage({

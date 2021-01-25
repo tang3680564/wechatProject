@@ -124,6 +124,7 @@ Page({
       success: function(res) {
         
         console.log(res) // 3
+        wx.clearStorageSync()
         that.setData({
           successOrderFlag: true
         })
@@ -135,7 +136,9 @@ Page({
   //下单成功
   successOrder: function() {
       this.setData({
-        successOrderFlag: false
+        successOrderFlag: false,
+        shopCartJson: {},
+        totalPrice: 0
       })
   },
 
