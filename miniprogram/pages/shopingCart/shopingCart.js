@@ -135,11 +135,14 @@ Page({
 
   //下单成功
   successOrder: function() {
+    wx.navigateTo({
+      url: '../myOrder/myOrderList/myOrderList',
+    });
       this.setData({
         successOrderFlag: false,
         shopCartJson: {},
         totalPrice: 0
-      })
+      });
   },
 
   /**
