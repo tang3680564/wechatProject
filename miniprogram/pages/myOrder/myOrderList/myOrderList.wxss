@@ -8,7 +8,6 @@
 .scrollView {
   width: 100vw;
   height: 100vh;
-  
 }
 
 .cellView {
@@ -20,7 +19,6 @@
   border-radius: 10rpx;
   display: flex;
   flex-direction: row;
-  
 }
 .cellLeftView {
   width: 25%;

@@ -16,7 +16,7 @@ exports.main = async (event, context) => {
   .where({
     openid: openid
   })
-  .orderBy('_id', 'desc')
+  .orderBy('timer', 'desc')
   .get({
     success: function (res) {
         return res

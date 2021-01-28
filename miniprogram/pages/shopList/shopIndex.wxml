@@ -1,8 +1,8 @@
 <!--miniprogram/pages/shopList/shopIndex.wxml-->
 <view class="shopMainView">
 <scroll-view scroll-y="true" class="shopScrollView">
-          <view class='shopListViewItem' wx:for="{{typeArray}}">
-            <view class='{{listSelectIndex == index ? "listSelect" : ""}}' bindtap="shopListViewTap" data-current="{{index}}">
+          <view class='shopListViewItem' wx:for="{{typeArray}}" bindtap="shopListViewTap" data-current="{{index}}">
+            <view class='{{listSelectIndex == index ? "listSelect" : ""}}'>
               {{item.type}}
             </view>
           </view>

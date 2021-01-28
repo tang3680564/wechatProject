@@ -1,26 +1,49 @@
 <!--miniprogram/pages/myOrder/myOrderDetail/myOrderDetail.wxml-->
 <View class="mainView">
   <scroll-view scroll-y="true">
+    
     <view class="cellView">
       <view class="orderDateView">
-        订单时间： 2021-01-28 10:35:25
+        <view class="orderDateTitleView">
+          订单时间：
+        </view>
+        <view class="orderDate">
+          {{orderDetail.orderDate}}
+        </view>
+         
       </view>
       <view  class="orderPriceView">
-        订单总价格： ¥100
+        <view class="orderDateTitleView">
+          订单总价格： 
+        </view>
+        <view class="orderPriceChartView">
+          ¥
+        </view>
+        <view class="orderDate">
+          {{orderDetail.totalPrice}}
+        </view>
       </view>
-      <view class="shopingView">
+      <view class="shopingView" wx:for="{{shopCartJson}}">
         <view class="shopingImageView">
-          <image src="../../../images/jichi.png" class=""></image>
+          <view class="shopingBorderImgeView">
+            <image src="../../../images/jichi.png" class=""></image>
+          </view>
         </view>
         <view class="shopingRightView">
+              <view class="shopingNameView">{{item.shop_name}}</view>
           <view>
-              <view>商品名字</view>
-          </view>
-          <view>
-            商品总价格
+            <view class="shopingSpaceView">
+              
+            </view>
+            <view class="shopingTotalView">
+              <view class="priceChartView">¥</view>
+              <view class="shopingPriceView">{{item.shopTotalPrice}}</view>
+            </view>
+            
           </view>
         </view>
       </view>
+      <view class="bottomView"></view>
     </view>
   </scroll-view>
 </View>

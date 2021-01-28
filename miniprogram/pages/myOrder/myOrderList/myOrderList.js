@@ -30,11 +30,14 @@ Page({
   },
 
   gotoOrderDetail: function(views) {
-      var index = views.target.dataset.current;
-      console.log(views);
-      // wx.navigateTo({
-      //   url: '../myOrderDetail/myOrderDetail',
-      // });
+      var index = views.currentTarget.dataset.current;
+      var json = this.data.orderListArray[index];
+      wx.navigateTo({
+        url: '../myOrderDetail/myOrderDetail',
+        success: function(res) {
+          res.eventChannel.emit('acceptDataFromOpenerPage', { orderDetail: JSON.stringify(json)})
+        }
+      });
   },
 
   /**

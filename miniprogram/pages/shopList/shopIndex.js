@@ -15,10 +15,10 @@ Page({
 
   shopListViewTap: function(view) {
       this.setData({
-        listSelectIndex: view.target.dataset.current,
+        listSelectIndex: view.currentTarget.dataset.current,
         detailSelectIndex: -1
       })
-      var type = this.data.typeArray[view.target.dataset.current];
+      var type = this.data.typeArray[view.currentTarget.dataset.current];
       var typeStr = type.type;
       this.getShopDetail(typeStr);
   },

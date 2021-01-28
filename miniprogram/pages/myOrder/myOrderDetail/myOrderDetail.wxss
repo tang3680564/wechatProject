@@ -4,15 +4,113 @@
   height: 100vh;
 }
 
+.orderDeatilTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 44rpx;
+}
 .cellView {
   width: 100vw;
   display: flex;
   flex-direction: column;
-
 }
+
+.orderDateView {
+  margin-top: 60rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: baseline;
+}
+
+.orderDateTitleView {
+  margin-left: 32rpx;
+  font-size: 34rpx;
+}
+
+.orderDate {
+  margin-left: 12rpx;
+  font-size: 34rpx;
+}
+
+.orderPriceView {
+  margin-top: 12rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: baseline;
+}
+
+.orderPriceChartView {
+  font-size: 30rpx;
+}
+
 
 .shopingView {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 150rpx;
+  margin-top: 0rpx;
+}
+
+.shopingImageView {
+  width: 150rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopingBorderImgeView {
+  width: 100rpx;
+  height: 100rpx;
+  overflow:hidden;
+  border-radius: 25rpx;
+}
+
+.shopingImageView image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.shopingRightView {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.shopingNameView {
+  width: 100%;
+  margin-left: 16rpx;
+  font-size: 32rpx;
+}
+
+.shopingSpaceView {
+  flex-grow: 1;
+}
+
+.shopingTotalView {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: baseline;
+  margin-top: 60rpx;
+}
+
+.priceChartView {
+  font-size: 30rpx;
+}
+
+.shopingPriceView {
+  margin-right: 40rpx;
+  font-size: 38rpx;
+}
+
+.bottomView {
+  width: 100vw;
+  height: 100rpx;
 }

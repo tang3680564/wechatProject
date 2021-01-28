@@ -1,8 +1,7 @@
 <!--miniprogram/pages/myOrder/myOrderList/myOrderList.wxml-->
-<view class="mainView"  bindtap="gotoOrderDetail" data-ccc="{{1}}">
-<scroll-view scroll-y="true" class="scrollView">
-  <view wx:for="{{orderListArray}}">
-  <view class="cellView" >
+<view class="mainView">
+  <scroll-view scroll-y="true" class="scrollView">
+  <view wx:for="{{orderListArray}}" class="cellView" bindtap="gotoOrderDetail" data-current="{{index}}">
     <view class="cellLeftView"> 
       <image src="../../../images/jichi.png" class="cellImage"></image>
     </view>
@@ -19,11 +18,9 @@
               状态：预定中
             </view>
           </view>
-      </view>
 
   </view>
     
   </view>
 </scroll-view>
-
 </view>

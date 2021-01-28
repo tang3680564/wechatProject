@@ -5,14 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      orderDetail: {},
+      shopCartJson: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    const eventChannel = that.getOpenerEventChannel()
+    eventChannel.on('acceptDataFromOpenerPage', function(data) {
+      console.log("orderDetail:" + data.orderDetail);
+      var json = JSON.parse(data.orderDetail);
+      that.setData({
+        orderDetail: json,
+        shopCartJson: json.shopCartJson
+      })
+    });
   },
 
   /**
