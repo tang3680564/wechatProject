@@ -30,7 +30,8 @@ exports.main = async (event, context) => {
         shopCartJson: event.shopCartJson,
         userInfoJson: event.userInfoJson,
         orderDate: orderDate,
-        timer:myDate.getTime()
+        timer:myDate.getTime(),
+        orderStatus:0
       },
     ]
   })

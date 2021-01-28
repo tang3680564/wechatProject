@@ -1,7 +1,8 @@
 <!--miniprogram/pages/myOrder/myOrderList/myOrderList.wxml-->
-<view class="mainView">
+<view class="mainView"  bindtap="gotoOrderDetail" data-ccc="{{1}}">
 <scroll-view scroll-y="true" class="scrollView">
-  <view class="cellView" wx:for="{{orderListArray}}">
+  <view wx:for="{{orderListArray}}">
+  <view class="cellView" >
     <view class="cellLeftView"> 
       <image src="../../../images/jichi.png" class="cellImage"></image>
     </view>
@@ -19,6 +20,9 @@
             </view>
           </view>
       </view>
+
+  </view>
+    
   </view>
 </scroll-view>
 

@@ -1,0 +1,18 @@
+/* miniprogram/pages/myOrder/myOrderDetail/myOrderDetail.wxss */
+.mainView {
+  width: 100vw;
+  height: 100vh;
+}
+
+.cellView {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.shopingView {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}

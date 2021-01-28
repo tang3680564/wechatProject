@@ -1,0 +1,26 @@
+<!--miniprogram/pages/myOrder/myOrderDetail/myOrderDetail.wxml-->
+<View class="mainView">
+  <scroll-view scroll-y="true">
+    <view class="cellView">
+      <view class="orderDateView">
+        订单时间： 2021-01-28 10:35:25
+      </view>
+      <view  class="orderPriceView">
+        订单总价格： ¥100
+      </view>
+      <view class="shopingView">
+        <view class="shopingImageView">
+          <image src="../../../images/jichi.png" class=""></image>
+        </view>
+        <view class="shopingRightView">
+          <view>
+              <view>商品名字</view>
+          </view>
+          <view>
+            商品总价格
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</View>

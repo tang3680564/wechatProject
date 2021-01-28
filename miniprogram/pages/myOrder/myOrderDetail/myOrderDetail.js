@@ -1,40 +1,18 @@
-// miniprogram/pages/myOrder/myOrderList/myOrderList.js
+// miniprogram/pages/myOrder/myOrderDetail/myOrderDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    orderListArray: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    wx.cloud.callFunction({
-      // 云函数名称
-      name: 'getUserOrderList',
-      // 传给云函数的参数
-      data: {},
-      success: function(res) {
-        console.log(res);
-        var orderListArray = res.result.data;
-        that.setData({
-          orderListArray: orderListArray
-        })
-      },
-      fail: console.error
-    });
-  },
 
-  gotoOrderDetail: function(views) {
-      var index = views.target.dataset.current;
-      console.log(views);
-      // wx.navigateTo({
-      //   url: '../myOrderDetail/myOrderDetail',
-      // });
   },
 
   /**
